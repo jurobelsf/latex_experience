@@ -1,0 +1,217 @@
+\documentclass[11pt,a4paper]{article} % Define clase y tamaño de documento
+
+% Configuración de idioma
+\usepackage[spanish]{babel} % Soporte para español
+\usepackage[utf8]{inputenc} % Codificación UTF-8 (opcional en versiones recientes de LaTeX)
+\usepackage[T1]{fontenc} % Codificación de fuente
+
+% Márgenes y layout
+\usepackage[rmargin=2.54cm,lmargin=2.54cm,top=2.54cm,bottom=2.54cm,headheight=14pt]{geometry} % Márgenes y altura del encabezado
+\usepackage{fancyhdr} % Encabezados y pies de página
+
+% Paquetes matemáticos
+\usepackage{amsmath,amsfonts,amssymb} % Símbolos y fuentes matemáticas
+
+% Gráficos y figuras
+\usepackage{graphicx} % Inclusión de gráficos avanzados
+\DeclareGraphicsExtensions{.pdf,.png,.jpg} % Extensiones gráficas permitidas
+\usepackage{tikz} % Dibujos y gráficos vectoriales
+
+%NUEVOS DE ESTE DOC
+
+\usepackage{pgfplots}
+\usetikzlibrary{decorations.pathreplacing, positioning}
+
+
+% Otros paquetes útiles
+\usepackage{ragged2e} % Justifica títulos
+\usepackage{xparse} % Crear comandos personalizados
+\usepackage{stackengine} % Apilamiento de objetos
+\usepackage{cancel} % Tachar elementos
+\usepackage{color} % Colores
+\usepackage{apacite} % Citas estilo APA
+\usepackage{hyperref} % Enlaces y referencias
+\hypersetup{
+    colorlinks=false,  %Ahí está para que los links NO tengan color
+    linkcolor=blue,  %Igual si quiere que tengan, acá puede cambiar el color
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={Documento},
+    pdfpagemode=FullScreen,
+}
+
+% Mejorar la tipografía
+\usepackage{microtype} % Mejoras tipográficas
+\usepackage{csquotes} % Citas adecuadas al idioma
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Encabezado y pie de página
+
+\pagestyle{fancy} % Activar estilo fancyhdr
+\rhead{Nombre} % Encabezado derecho
+\lhead{Microeconomía} % Encabezado izquierdo
+\fancyfoot[R]{\thepage} % Pie de página derecho con número de página
+\fancyfoot[C]{Institución} % Pie de página centrado con texto
+
+\bibliographystyle{apacite} % Estilo de bibliografía APA
+
+\title{Taller Microeconomía} % Título del documento
+\author{Nombre} % Autor
+\date{\today} % Fecha
+
+\usetikzlibrary{babel} % Compatibilidad TikZ con babel. Esto ha prevenido muchos errores de vainas de tikz que se petan por babel
+
+\begin{document} % Inicio del documento
+
+\maketitle\thispagestyle{fancy} % Título del documento con estilo fancy
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{}
+
+
+\subsection{}
+
+\noindent Calculamos las tasas de oportunidad de producción, es decir, la pendiente de la curva de oferta. 
+
+\begin{itemize}
+\item País A: $\frac{100-0}{0-200} = \frac{100}{200} = \frac{\text{1 auto}}{\text{2 computadoras}}$
+\end{itemize}
+
+\noindent Así, la tasa es de 0,5 autos por computador y 2 computadoras por auto.
+
+
+\begin{itemize}
+    \item País B: $\frac{0-150}{50-0} = \frac{150}{50} = \frac{\text{3 computadores}}{\text{1 auto}}$
+\end{itemize}
+
+\noindent Así, la tasa es 3 computadores por auto y 0,33 autos por computadora.
+
+\subsection{}
+
+\begin{tikzpicture}
+    \begin{axis}[
+        xlabel={Computadoras},
+        ylabel={Autos},
+        xmin=0, xmax=200,
+        ymin=0, ymax=200,
+        xtick={0,50,100,150,200},
+        ytick={0,50,100,150,200},
+        legend pos=north east,
+        grid=major,
+        width=\linewidth,
+        height=0.6\linewidth,
+    ]
+    % Data for País A
+    \addplot[
+        color=blue,  % Color azul para País A
+        mark=*,
+        ]
+        coordinates {
+        (0, 50)(150, 0)
+        };
+    \addlegendentry{País B}
+
+    % Data for País B
+    \addplot[
+        color=red,  % Color rojo para País B
+        mark=*,
+        ]
+        coordinates {
+        (0, 100)(200, 0)
+        };
+    \addlegendentry{País A}
+
+    \end{axis}
+\end{tikzpicture}
+
+
+\subsection{}
+
+\noindent Ambas fronteras de posibilidades de producción tienen pendientes diferentes, lo cual muestra que los países tienen diferencias en sus tasas relativas, y por ende, uno de los dos bienes les resulta más barato de producir en términos relativos respecto al otro país, debido a que tiene ventajas comparativas en su producción se verían beneficiados de una especialización en alguno de los 2 bienes (en aquel que tengan ventaja) y luego entrar en el comercio entre ambos
+
+
+\subsection{}
+
+\[
+\begin{array}{c|cc}
+    & \text{Autos} & \text{Computadoras} \\ \hline
+    \text{A} & 0,5 & 2 \\
+    \text{B} & 0,33 & 3 \\
+\end{array}
+\]
+
+\noindent Notemos que sacrificando un computador el país A puede hacer más autos que B. Asimismo, sacrificando un auto, B puede hacer más computadoras que A. Luego, le conviene a A especializarse en autos y a B en computadores, y una vez que ambos se hayan especializado, comerciar entre ellos. En el caso de que se especialicen, el punto de A es (100, 0)\footnote{Es decir, 100 autos y 0 computadores}, y el de B es (0, 150). 
+
+Supongamos un caso hipotético donde los términos de intercambio de ambos países son de 2,5 computadores por un auto. Los países podrían comerciar y podrían alcanzar puntos que estén fuera de su frontera de posibilidades de producción, por lo cual están recibiendo ganancias de la especialización y el comercio. Especializarse le permitiría a ambos países alcanzar puntos que en sus condiciones originales de producción no hubieran podido alcanzar. 
+
+
+\section{}
+
+\subsection{}
+
+\noindent Cálculo de la pendiente curva oferta:
+
+$$
+m = \frac{Q_{2}-Q_{1}}{P_{2}-P_{1}} = \frac{200-100}{20\$-10\$} = 10
+$$
+
+\subsection{}
+
+\noindent Para encontrar la ecuación de la curva de oferta, sabemos que $Q_{2} = a + bP_{2}$. Como $b=10$, luego con $Q_{2} = 200$ tenemos que $200 = a + 10(20\$)$, de lo que se sigue que $a = 0$. Así, hemos encontrado todos los componentes de la ecuación. 
+
+\subsection{}
+
+\noindent La ecuación resultante es Q = 10P. (completar)
+
+\subsection{}
+
+\noindent Si $P = 30$, entonces $Q=a+b(30)=300$
+
+\section{}
+
+\subsection{} 
+
+\noindent Tenemos que $Q^{d} = 200 - 5P$ y $Q^{s} = 2P$. Busquemos el equilibrio, es decir, $Q^{d} = Q^{s}$. Así, $200 - 5P = 2P$, de donde se sigue que $P^* = \frac{200}{7} \approx 28,571$. Reemplazando $P^*$ para encontrar $Q^*$, $Q^* = 200 \cdot \frac{200}{7} \approx 57,142$ 
+
+\subsection{} 
+
+\noindent El precio máximo de reserva es el precio para el cual $Q^d=0$. Luego, $0=200-5P_{max}$, de lo que se sigue que $P_{max} = 40$.
+
+El excedente del consumidor (EC) está dado por: $\frac{(P_{max}-P^*)(Q^*)}{2}$. Reemplazando los valores, $EC = \frac{(40-(\frac{200}{7}))(\frac{400}{7})}{2} \approx 326,530612$.
+
+\subsection{}
+
+\noindent El excedente del productor está dado por $\frac{(P^{*}-P_{min})(Q*)}{2}$. Como $P_{min} = 0$, entonces $\frac{(P*)(Q*)}{2} \approx 816,326531$. 
+
+\subsection{}
+
+\noindent Como el excedente total (ET) es la suma del excedente del productor mas el excedente del consumidor, $ET \approx 1142,85653$
+
+\section{}
+
+\subsection{}
+
+\noindent Para encontrar el punto de equilibrio, igualamos $Q^d = Q^s$, así, $300-5P=2P$, de donde se sigue que $P* = \frac{300}{7} \approx 42,8571$. Ahora bien, $Q* = 2P* \approx 85,7142857$
+
+\subsection{}
+
+\noindent El precio de reserva $P_{max}$ es aquel que hace que la cantidad demandada sea 0, así
+
+$P_{max} = \frac{300}{5} = 60$. De esta forma, $EC = \frac{(60-\frac{300}{7})(85,714)}{2} \approx 734,693$ 
+
+
+\subsection{}
+
+\noindent El nuevo excedente del productor está dado por $\frac{(P^{*}-0)(Q^{*})}{2} = \frac{(42,8571)(85,7142857)}{2} \approx 1836,726$
+
+\subsection{}
+
+\noindent Sumando el nuevo excedente del productor y el nuevo excedente del consumidor, tenemos que $ET \approx 2571,419$ 
+
+
+
+%\bibliography{citas}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document} %Acá termina
