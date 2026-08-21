@@ -1,0 +1,1408 @@
+\documentclass[11pt,a4paper]{article}
+\pagestyle{empty}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{ragged2e}%justifica títulos
+\usepackage{pdfpages}
+\usepackage{xparse}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+\usepackage[rmargin=2.54cm,lmargin=2.54cm,top=2.54cm,bottom=2.54cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{stackengine}
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{cancel}
+\usepackage{color}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{hyperref}
+\usepackage{apacite}
+\bibliographystyle{apacite}
+\usepackage{pdfpages}
+\usepackage{booktabs}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Encabezado y más
+
+\rhead{Grupo 3}
+\lhead{Modelación Estática}
+\fancyfoot[LE,RO]{\thepage}
+\fancyfoot[CE,CO]{Universidad Nacional de Colombia}
+
+\bibliographystyle{apacite}
+
+\title{
+Universidad Nacional de Colombia - Sede Bogotá
+
+Facultad de Ciencias Económicas
+
+Modelación Estática
+
+Primer Taller - Grupo 3
+}
+\date{12 de Septiembre de 2022}
+
+\begin{document}% Aquí empieza
+
+\maketitle\thispagestyle{fancy}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Integrantes del grupo:}
+
+\begin{itemize}
+\item Laura Daniela Ramírez Garzón
+\item Juan David Robles
+\item Valentina Patarroyo Sanabria
+\item Angie Daniela Alvis Alonso
+\end{itemize}
+
+\section{Ejercicios}
+
+\begin{enumerate}
+\item 
+
+
+
+\textit{a}) ($P\rightarrow Q) \wedge P \Rightarrow Q$
+
+
+\begin{displaymath}
+\begin{array}{|c c||c|c|}
+% |c c|c| means that there are three columns in the table and
+% a vertical bar ’|’ will be printed on the left and right borders,
+% and between the second and the third columns.
+% The letter ’c’ means the value will be centered within the column,
+% letter ’l’, left-aligned, and ’r’, right-aligned.
+P & Q & P \rightarrow Q & P\rightarrow Q \wedge P \Rightarrow Q \\ % Use & to separate the columns
+\hline % Put a horizontal line between the table header and the rest.
+T & T & T & T\\
+T & F & F & F\\
+F & T & T & T\\
+F & F & T & T\\
+\end{array}
+\end{displaymath}
+
+\vspace{0.2cm}
+
+\noindent Después de evaluar el enunciado usando tablas de verdad, tenemos que para algunos valores es verdadero, pero no para todos. Por lo tanto, el enunciado es \textbf{falso}. 
+\vspace{0.5cm}
+
+\textit{b}) ($P\rightarrow Q) \leftrightarrow (\neg  Q \rightarrow \neg P)$
+
+\begin{displaymath}
+\begin{array}{|c c||c|c|c|c|c|}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+P & Q & \neg  P & \neg  Q & P\rightarrow Q & \neg  Q \rightarrow \neg P & P\rightarrow Q \leftrightarrow \neg  Q \rightarrow \neg P \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hline
+T & T & F & F & T & T & T\\
+T & F & F & T & F & F & T\\
+F & T & T & F & T & T & T\\
+F & F & T & T & T & T & T\\
+\end{array}
+\end{displaymath}
+
+\noindent Al comprobar el enunciado, encontramos que el resultado es una tautología. Por ende, se concluye que el enunciado es \textbf{verdadero}.
+
+\vspace{0.5cm}
+
+\textit{c}) $ A \cup (B \cap C) = (A \cup B) \cap (A \cup C) $
+
+\vspace{0.3cm}
+
+Sea $x$ un número real en donde $x \in A \cup (B \cap C)$. Entonces $x \in A  \vee  x \in B \cap C.$ 
+
+\begin{itemize}
+\item Si $x \in A$ entonces $(x \in A \cup B) \wedge (x \in A \cup C)$
+\end{itemize}
+
+\begin{itemize}
+\item Si $x \notin A$ entonces $x \in B \cap C$, por lo tanto $(x \in B) \wedge (x \in C)$. Ahora bien, se puede afirmar que $(x \in B \cup A) \wedge (x \in C \cup A)$
+\end{itemize}
+
+Por propiedad conmutativa de los conjuntos se cumple que $(A \cup B = B \cup A) \wedge (A \cup C = C \cup A)$. Por ende, tenemos que en ambos casos $(x \in A \cup B \wedge A \cup C)$, y así concluimos que
+
+\begin{center}
+    $A \cup (B \cap C) = (A \cup B) \cap (A \cup C)$
+\end{center}
+
+\textit{d}) 
+
+Sean $x, y \in \mathbb{R}$. Si su producto es irracional entonces sabemos que x o y es irracional.
+
+\textbf{Por contradicción:} 
+
+$xy$ es irracional. Tanto $x$ como $y$ son números racionales. 
+
+Si $x, y \in \mathbb{Q}$ entonces se pueden expresar de la forma
+
+\begin{center}
+    $x = \dfrac{a}{b}$, $y = \dfrac{c}{d}
+    $
+\end{center}
+
+Siendo así, podemos expresar el producto de $xy$ como $\dfrac{a}{b} \cdot \dfrac{c}{d}$. Operamos
+
+\begin{center}
+
+$\dfrac{a}{b} \cdot \dfrac{c}{d} = \dfrac{ac}{bd}$
+
+\end{center}
+
+Encontramos que $\dfrac{ac}{bd} \in \mathbb{Q}$, lo cual es una contradicción porque $\dfrac{ac}{bd}$ al ser un número racional, no puede pertenecer al mismo tiempo a los números irracionales.
+
+Para que la afirmación sea verdadera $\dfrac{a}{b}$ o $\dfrac{c}{d}$ deben ser irracionales. Por lo tanto, $x$ o $y$ (o ambos) $\in \mathbb{I}$
+
+\vspace{0.5cm}
+
+\textit{e}) Partimos de una matriz:
+
+
+$$
+\begin{pmatrix} 
+a & b \\
+c & d \\
+\end{pmatrix}
+\quad
+$$
+
+Donde $a, b, c, d \in \mathbb{R}$
+
+Planteamos las siguientes ecuaciones:
+
+\begin{center}
+
+1. $a + d = 7$
+
+2. $ad - bc = 4$
+
+\end{center}
+
+Despejamos 2.
+
+\begin{center}
+
+$(7-d)d - bc = 4$
+
+$7d-d^2-bc = 4$
+
+\end{center}
+
+Con esta última ecuación, fácilmente podemos (a través de prueba y error) deducir algunos valores para las variables de la matriz que cumplan la igualdad.
+
+
+\begin{itemize}
+\item $a = 1$
+\item $b = 2$
+\item $c = 1$
+\item $d = 6$
+\end{itemize}
+
+De esta forma, tenemos una matriz
+
+$$
+\begin{pmatrix} 
+1 & 2 \\
+1 & 6 \\
+\end{pmatrix}
+\quad
+$$
+
+Dado que encontramos una matriz con un determinante de 4 y una traza de 7, demostramos en enunciado.
+
+\vspace{0.5cm}
+
+\textit{f}) 
+
+Sean $x, y, \in \mathbb{Z}$ tales que $x > y$, entonces $ 0 < y -x$, y podemos reescribir $ 0 < \dfrac{1}{y-x}$ sin pérdida de generalidad. 
+
+Sea $n \in 	\mathbb{N}$ tal que $\dfrac{1}{y-x} < n, \underbrace{1 < ny - nx}_{(1)}$
+
+Sea $m \in \mathbb{N}$ tal que $m \le nx < m + 1$. Restando $m$ obtenemos $\underbrace{0 \le nx - m < 1}_{(2)}$
+
+Relacionando (1) con (2)
+
+\begin{center}
+    $0 \le nx - m < 1 < ny-nx$
+    
+    $\underbrace{nx - m < 1 < ny-nx}_{(3)}$
+\end{center}
+
+Sumando $m$ a (3) 
+
+\begin{center}
+    $nx < 1 + m < ny - nx + m$ 
+\end{center}
+
+Como $m \le nx$; $-nx \le -m$; 
+
+\begin{center}
+$-nx + ny \le -m+ny$
+
+$ny - nx + m \le ny$
+\end{center}
+
+Por ende, tenemos 
+
+\begin{center}
+    $nx < 1 + m < ny$
+    
+    $x < \dfrac{1 + m}{n} < y$, siendo $\dfrac{1 + m}{n}$ un número racional
+\end{center}
+
+\item
+
+
+\textit{a}) Representamos las afirmaciones individuales del texto con variables para construir un enunciado que se pueda comprobar por medio de tablas de verdad. De esta forma:
+
+\begin{itemize}
+\item $p$ = Tocar la guitarra
+\item $q$ = Tocar la flauta
+\item $r$ = Toca el órgano
+\item  $s$ = Toca el arpa
+\end{itemize}
+Entonces, podemos reescribir la afirmación como:
+
+\begin{center}
+
+$[\neg (p \wedge q) \wedge ((\neg p \wedge \neg q) \rightarrow (r \wedge s)) \wedge (s \rightarrow r)] \rightarrow r $
+
+\end{center}
+
+\begin{displaymath}
+\begin{array}{|c c c c||c|c|c|c|c|c|c|}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+p & q & r & s & p \wedge q & \neg(p \wedge q) & \neg p & \neg q & (\neg p \wedge \neg q) & r \wedge s & (\neg p \wedge \neg q) \rightarrow (r \wedge s) \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hline 
+F & F & T & F & F & T & T & T & T & F & F\\
+F & F & T & T & F & T & T & T & T & F & F\\
+F & F & F & F & F & T & T & T & T & F & F\\
+F & F & F & T & F & T & T & T & F & T & T\\
+F & T & T & F & F & T & T & F & F & F & T\\
+F & T & T & T & F & T & T & F & F & F & T\\
+F & T & F & F & F & T & T & F & F & F & T\\
+F & T & F & T & F & T & T & F & F & T & T\\
+T & F & T & F & F & T & F & T & F & F & T\\
+T & F & T & T & F & T & F & T & F & F & T\\
+T & F & F & F & F & T & F & T & F & F & T\\
+T & F & F & T & F & T & F & T & F & T & T\\
+T & T & T & F & T & F & F & F & F & F & T\\
+T & T & T & T & T & F & F & F & F & F & T\\
+T & T & F & F & T & F & F & F & F & F & T\\
+T & T & F & T & T & F & F & F & F & T & T\\
+\end{array}
+\end{displaymath}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{displaymath}
+\begin{array}{|c|c|c|}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\neg (p \wedge q) \wedge ((\neg p \wedge \neg q) \rightarrow (r \wedge s)) & s \rightarrow r & \neg (p \wedge q) \wedge ((\neg p \wedge \neg q) \rightarrow (r \wedge s)) \wedge (s \rightarrow r) \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hline 
+F & T & F \\
+F & F & F \\
+F & T & F \\
+T & T & T \\
+T & T & T \\
+T & F & F \\
+T & T & T \\
+T & T & T \\
+T & T & T \\
+T & F & F \\
+T & T & T \\
+T & T & T \\
+F & T & F \\
+F & F & F \\
+F & T & F \\
+F & T & F \\
+
+\end{array}
+\end{displaymath}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{displaymath}
+\begin{array}{|c|}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+[\neg (p \wedge q) \wedge ((\neg p \wedge \neg q) \rightarrow (r \wedge s)) \wedge (s \rightarrow r)] \rightarrow r\\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hline 
+T\\
+T\\
+T\\
+T\\
+F\\
+T\\
+T\\
+T\\
+F\\
+T\\
+T\\
+T\\
+T\\
+T\\
+T\\
+T\\
+\end{array}
+\end{displaymath}
+
+
+\vspace{0.5cm}
+
+El resultado de la tabla de verdad no es una tautología. Por lo tanto, concluimos que la afirmación es \textbf{falsa}.
+
+\vspace{0.5cm}
+
+\textit{b}) Construimos el enunciado de la misma forma que hicimos en el ejercicio anterior.
+
+\begin{itemize}
+\item $p$ = Robar un banco
+\item $q$ = Ir a la cárcel
+\item $r$ = Divertirse
+\item  $s$ = Tener vacaciones
+\end{itemize}
+
+\begin{center}
+
+$[(p \rightarrow q) \wedge (q \rightarrow \neg r) \wedge (s \rightarrow r) \wedge (p \vee s)] \rightarrow q \vee r$
+
+\end{center}
+
+\begin{displaymath}
+\begin{array}{|c c c c||c|c|c|c|c|}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+p & q & r & s & p \rightarrow q & \neg r & q \rightarrow \neg r & (p \rightarrow q) \wedge (q \rightarrow \neg r) & s \rightarrow r \\ %& p \vee s & p \rightarrow q) \wedge (q \rightarrow \neg r) \wedge (s \rightarrow r) \wedge (p \vee s\\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hline 
+F & F & F & F & T & T & T & T & T\\
+F & F & F & T & T & T & T & T & F\\
+F & F & T & F & T & F & T & T & T\\
+F & F & T & T & T & F & T & T & T\\
+F & T & F & F & T & T & T & T & T\\
+F & T & F & T & T & T & T & T & F\\
+F & T & T & F & T & F & F & F & T\\
+F & T & T & T & T & F & F & F & T\\
+T & F & F & F & F & T & T & F & T\\
+T & F & F & T & F & T & T & F & F\\
+T & F & T & F & F & F & T & F & T\\
+T & F & T & T & F & F & T & F & T\\
+T & T & F & F & T & T & T & T & T\\
+T & T & F & T & T & T & T & T & F\\
+T & T & T & F & T & F & F & F & T\\
+T & T & T & T & T & F & F & F & T\\
+\end{array}
+\end{displaymath}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  2DA TABLA
+
+
+\begin{displaymath}
+\begin{array}{|c|c|c|c|}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+(p \rightarrow q) \wedge (q \rightarrow \neg r) \wedge (s \rightarrow r) & p \vee s & (p \rightarrow q) \wedge (q \rightarrow \neg r) \wedge (s \rightarrow r) \wedge (p \vee s) & q \vee r\\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hline 
+T & F & F & F\\
+F & T & F & F\\
+T & F & F & T\\
+T & T & T & T\\
+T & F & F & T\\
+F & T & F & T\\
+F & F & F & T\\
+F & T & F & T\\
+F & T & F & F\\
+F & T & F & F\\
+F & T & F & T\\
+F & T & F & T\\
+T & T & T & T\\
+F & T & F & T\\
+F & T & F & T\\
+F & T & F & T\\
+
+\end{array}
+\end{displaymath}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{displaymath}
+\begin{array}{|c|}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+[(p \rightarrow q) \wedge (q \rightarrow \neg r) \wedge (s \rightarrow r) \wedge (p \vee s)] \rightarrow q \vee r\\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hline 
+T\\
+T\\
+T\\
+T\\
+T\\
+T\\
+T\\
+T\\
+T\\
+T\\
+T\\
+T\\
+T\\
+T\\
+T\\
+T\\
+
+\end{array}
+\end{displaymath}
+
+Como el resultado de las tablas de verdad es una tautología, concluimos que la afirmación es \textbf{verdadera}. 
+
+\vspace{0.5cm}
+
+\textit{c})
+
+\begin{itemize}
+\item $p$ = Estudiar
+\item $q$ = Trabajar
+\item $r$ = Dormir
+\item  $s$ = Salir de fiesta
+\end{itemize}
+
+\begin{center}
+
+$[((p \wedge q) \vee \neg r \vee \neg s) \vee (s \wedge r)] \rightarrow \neg p \vee \neg q$
+
+\end{center}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{displaymath}
+\begin{array}{|c c c c|c|c|c|c|c|c|}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+p & q & r & s & p\wedge q & \neg r & (p \wedge q) \vee \neg r & \neg s & (p \wedge q) \vee \neg r \vee \neg s & s \wedge r \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hline 
+F & F & F & F & F & T & T & T & T & F\\
+F & F & F & T & F & T & T & F & T & F\\
+F & F & T & F & F & F & F & T & T & F\\
+F & F & T & T & F & F & F & F & F & V\\
+F & T & F & F & F & T & T & T & T & F\\
+F & T & F & T & F & T & T & F & T & F\\
+F & T & T & F & F & F & F & T & T & F\\
+F & T & T & T & F & F & F & F & F & T\\
+T & F & F & F & F & T & T & T & T & F\\
+T & F & F & T & F & T & T & F & T & F\\
+T & F & T & F & F & F & F & T & T & F\\
+T & F & T & T & F & F & F & F & F & T\\
+T & T & F & F & T & T & T & T & T & F\\
+T & T & F & T & T & T & T & F & T & F\\
+T & T & T & F & T & F & T & T & T & F\\
+T & T & T & T & T & F & T & F & T & T\\
+\end{array}
+\end{displaymath}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{displaymath}
+\begin{array}{|c|c|c|c|c|}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+((p \wedge q) \vee \neg r \vee \neg s) \vee (s \wedge r) & \neg p & \neg q & \neg p \vee \neg q & [((p \wedge q) \vee \neg r \vee \neg s) \vee (s \wedge r)] \rightarrow \neg p \vee \neg q \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hline 
+T & T & T & T & T\\
+T & T & T & T & T\\
+T & T & T & T & T\\
+T & T & T & T & T\\
+T & T & F & T & T\\
+T & T & F & T & T\\
+T & T & F & T & T\\
+T & T & F & T & T\\
+T & F & T & T & T\\
+T & F & T & T & T\\
+T & F & T & T & T\\
+T & F & T & T & T\\
+T & F & F & F & F\\
+T & F & F & F & F\\
+T & F & F & F & F\\
+T & F & F & F & F\\
+
+\end{array}
+\end{displaymath}
+
+De nuevo, como la afirmación no es una tautología, el enunciado es \textbf{falso}.
+
+\vspace{0.5cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\textit{d})
+
+\begin{itemize}
+\item $p$ = Llueve
+\item $q$ = Riegan jardín
+\item $r$ = Las flores tienen rocío
+\item  $s$ = El suelo amanece mojado
+\end{itemize}
+
+\begin{center}
+
+$[(p \vee q) \rightarrow (r \vee s) \wedge (\neg p \wedge \neg q)] \rightarrow (\neg p \wedge \neg q)$
+
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{displaymath}
+\begin{array}{|c c c c|c|c|c|c|c|c|}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+p & q & r & s & p \vee q & r \vee s & \neg p & \neg q & \neg p \wedge \neg q & (r \vee s) \wedge (\neg p \wedge \neg q) \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hline 
+F & F & F & F & F & F & T & T & T & F\\
+F & F & F & T & F & T & T & T & T & T\\
+F & F & T & F & F & T & T & T & T & T\\
+F & F & T & T & F & T & T & T & T & T\\
+F & T & F & F & T & F & T & F & F & F\\
+F & T & F & T & T & T & T & F & F & F\\
+F & T & T & F & T & T & T & F & F & F\\
+F & T & T & T & T & T & T & F & F & F\\
+T & F & F & F & T & F & F & T & F & F\\
+T & F & F & T & T & T & F & T & F & F\\
+T & F & T & F & T & T & F & T & F & F\\
+T & F & T & T & T & T & F & T & F & F\\
+T & T & F & F & T & F & F & F & F & F\\
+T & T & F & T & T & T & F & F & F & F\\
+T & T & T & F & T & T & F & F & F & F\\
+T & T & T & T & T & T & F & F & F & F\\
+\end{array}
+\end{displaymath}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{displaymath}
+\begin{array}{|c|c|}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+(p \vee q) \rightarrow (r \vee s) \wedge (\neg p \wedge \neg q) & [(p \vee q) \rightarrow (r \vee s) \wedge (\neg p \wedge \neg q)] \rightarrow (\neg p \wedge \neg q)\\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hline 
+T & T\\
+T & T\\
+T & T\\
+T & T\\
+F & T\\
+F & T\\
+F & T\\
+F & T\\
+F & T\\
+F & T\\
+F & T\\
+F & T\\
+F & T\\
+F & T\\
+F & T\\
+F & T\\
+
+\end{array}
+\end{displaymath}
+
+En este caso, el resultado sí es una tautología. Por esto, la afirmación es \textbf{verdadera}
+
+\item
+
+\textit{a}) $BXA = C$
+
+Podemos multiplicar a ambos lados por la inversa de $B$ y de $A$. Por propiedades, sabemos que la inversa de una matriz multiplicada por la matriz original, obtendremos la matriz identidad. De igual forma, al multiplicar una matriz por la matriz identidad, el resultado será la misma matriz. Lo que lograremos con esto, es despejar la $X$. De esta forma, 
+
+\begin{center}
+
+$B^{-1}B X AA^{-1} = B^{-1} C A^{-1}$
+
+$X =  B^{-1} C A^{-1}$
+
+\end{center}
+
+Ahora, hallamos la inversa de $B$ y de $A$
+
+$$
+B^{-1} = \frac{1}{det(B)}
+\begin{pmatrix} 
+0 & 7 \\
+4 & 2 \\
+\end{pmatrix}
+$$
+
+$$
+B^{-1} = -\frac{1}{28}
+\begin{pmatrix} 
+0 & 7 \\
+4 & 2 \\
+\end{pmatrix}
+= 
+\begin{pmatrix} 
+0 & -\frac{1}{4} \\
+-\frac{1}{7}  & -\frac{3}{28} \\
+\end{pmatrix}
+$$
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+$$
+A^{-1} = \frac{1}{det(A)}
+\displaystyle
+\begin{pmatrix} 
+7 & 1 \\
+0 & -3 \\
+\end{pmatrix}
+$$
+
+$$
+A^{-1} = -\frac{1}{21}
+\begin{pmatrix} 
+7 & 1 \\
+0 & -3 \\
+\end{pmatrix}
+= 
+\begin{pmatrix} 
+-\frac{1}{3} & -\frac{1}{21} \\
+0  & \frac{1}{7} \\
+\end{pmatrix}
+$$
+
+Hacemos la multiplicación de las matrices inversas con $C$ para encontrar $X$
+
+$$
+B^{-1}C =
+\begin{pmatrix} 
+0 & -\frac{1}{4} \\
+-\frac{1}{7}  & -\frac{3}{28} \\
+\end{pmatrix}
+\cdot 
+\begin{pmatrix} 
+1 & 0 \\
+3  & 1 \\
+\end{pmatrix}
+=
+\begin{pmatrix} 
+-\frac{3}{4} & -\frac{1}{4} \\
+-\frac{13}{28}  & -\frac{3}{28} \\
+\end{pmatrix}
+$$
+
+$$
+B^{-1}CA^{-1} =
+\begin{pmatrix} 
+-\frac{3}{4} & -\frac{1}{4} \\
+-\frac{13}{28}  & -\frac{3}{28} \\
+\end{pmatrix}
+\cdot
+\begin{pmatrix} 
+-\frac{1}{3} & -\frac{1}{21} \\
+0  & \frac{1}{7} \\
+\end{pmatrix}
+=
+\begin{pmatrix}
+\frac{1}{4} & 0 \\
+\frac{13}{84}  & \frac{1}{147} \\
+\end{pmatrix}
+$$
+
+De esta forma,
+
+$$
+X = 
+\begin{pmatrix} 
+\frac{1}{4} & 0 \\
+\frac{13}{84}  & \frac{1}{147} \\
+\end{pmatrix}
+$$
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\textit{b}) $A^{T}B + X = C^{-1}$
+
+$$
+A^{T} = 
+\begin{pmatrix} 
+-3 & 0 \\
+-1  & 7 \\
+\end{pmatrix}
+$$
+
+$$
+A^{T}B = 
+\begin{pmatrix} 
+-3 & 0 \\
+-1  & 7 \\
+\end{pmatrix}
+\cdot
+\begin{pmatrix} 
+3 & -7 \\
+-4  & 0 \\
+\end{pmatrix}
+=
+\begin{pmatrix} 
+-9 & 21 \\
+-31  & 7 \\
+\end{pmatrix}
+$$
+
+Sumamos el resultado de la multiplicación de $A^{T}B$ una matriz $X$ de variables.
+
+$$
+\begin{pmatrix} 
+-9 & 21 \\
+-31  & 7 \\
+\end{pmatrix}
++
+\begin{pmatrix} 
+a & b \\
+c  & d \\
+\end{pmatrix}
+=
+\begin{pmatrix} 
+-9+a & 21+b \\
+-31+c  & 7+d \\
+\end{pmatrix}
+$$
+
+$$
+C^{-1} =
+\begin{pmatrix} 
+-9+a & 21+b \\
+-31+c  & 7+d \\
+\end{pmatrix}
+$$
+
+Ahora, hallamos $C^{-1}$ para igualarla con el resultado que obtuvimos. 
+
+$$
+C^{-1} = \frac{1}{det(C)}
+\begin{pmatrix} 
+1 & 0 \\
+-3  & 1 \\
+\end{pmatrix}
+$$
+
+$$
+C^{-1} =
+\begin{pmatrix} 
+1 & 0 \\
+-3  & 1 \\
+\end{pmatrix}
+$$
+
+$$
+\begin{pmatrix} 
+-9+a & 21+b \\
+-31+c  & 7+d \\
+\end{pmatrix}
+=
+\begin{pmatrix} 
+1 & 0 \\
+-3  & 1 \\
+\end{pmatrix}
+$$
+
+Ahora, planteamos las respectivas ecuaciones para encontrar cada variable.
+
+\begin{itemize}
+\item $-9+a = 1; a = 10$ 
+\end{itemize}
+
+\begin{itemize}
+\item $21+b=0; b = -21$ 
+\end{itemize}
+
+\begin{itemize}
+\item $-31+c=-3; c = 28$ 
+\end{itemize}
+
+\begin{itemize}
+\item $7d=1; d=-6$ 
+\end{itemize}
+
+
+Siendo así, decimos que $X$ es
+$$
+\begin{pmatrix} 
+10 & 28 \\
+-21  & -6 \\
+\end{pmatrix}
+$$
+
+\textit{c}) 
+
+\begin{center}
+
+$(A-X)^{-1} = CB^{-1}$
+
+$((A-X)^{-1})^{-1} = (CB^{-1})^{-1}$
+
+$A-X = BC^{-1}$
+
+$A \cdot BC^{-1} = X$
+
+\end{center}
+
+Ahora, hallamos $C^{-1}$
+
+$$
+C^{-1} =
+\begin{pmatrix} 
+1 & 0 \\
+3  & 1 \\
+\end{pmatrix}
+$$
+
+$$
+\dfrac{1}{Det(C)} =
+\begin{pmatrix} 
+1 & 0 \\
+-5  & 1 \\
+\end{pmatrix}
+$$
+
+$$
+C^{-1} =
+\begin{pmatrix} 
+1 & 0 \\
+-5  & 1 \\
+\end{pmatrix}
+$$
+
+Procedemos a hacer la multiplicación y después la resta con $A$
+
+$$
+BC^{-1} =
+\begin{pmatrix} 
+3 & -7 \\
+-4  & 0 \\
+\end{pmatrix}
+\cdot
+\begin{pmatrix} 
+1 & 0 \\
+-5  & 1 \\
+\end{pmatrix}
+=
+\begin{pmatrix} 
+3+21 & 0-7 \\
+-4+0  & 0+0 \\
+\end{pmatrix}
+$$
+
+
+$$
+BC^{-1} =
+\begin{pmatrix} 
+24 & -7 \\
+-4  & 0 \\
+\end{pmatrix}
+$$
+
+$$
+A-BC^{-1} =
+\begin{pmatrix} 
+-3 & -1 \\
+0  & 7 \\
+\end{pmatrix}
+-
+\begin{pmatrix} 
+24 & -7 \\
+-4 & 0 \\
+\end{pmatrix}
+$$
+
+$$
+A-BC^{-1} =
+\begin{pmatrix} 
+-27 & 6 \\
+4  & 7 \\
+\end{pmatrix}
+$$
+
+De esta forma, decimos que $X$ es 
+
+$$
+X =
+\begin{pmatrix} 
+-27 & 6 \\
+4  & 7 \\
+\end{pmatrix}
+$$
+
+\vspace{0.5cm}
+
+\textit{d}) $AX=XA$
+
+$$
+\begin{pmatrix} 
+-3 & -1 \\
+-0  & 7 \\
+\end{pmatrix}
+\cdot
+\begin{pmatrix} 
+a & b \\
+c  & d \\
+\end{pmatrix}
+=
+\begin{pmatrix} 
+a & b \\
+c  & d \\
+\end{pmatrix}
+\cdot
+\begin{pmatrix} 
+-3 & -1 \\
+0  & 7 \\
+\end{pmatrix}
+$$
+
+$$
+\begin{pmatrix} 
+-3a-c & -3b-d \\
+7c  & 7d \\
+\end{pmatrix}
+=
+\begin{pmatrix} 
+-3a & -a+7b \\
+-3c  & -c+7d \\
+\end{pmatrix}
+$$
+
+\begin{itemize}
+\item $-3a-c = -3a; -3a+3a = c; c=0 $
+\end{itemize}
+
+\begin{itemize}
+\item $-3b-d = a+7b; -d=-a+7b+3b; a=10b+d$
+\end{itemize}
+
+\begin{itemize}
+\item $7c=-3c$
+\end{itemize}
+
+\begin{itemize}
+\item $7d=-c+7d$
+\end{itemize}
+
+Después de despejar las ecuaciones, construimos $X$.
+
+$$X = 
+\begin{pmatrix} 
+10b+d & b \\
+0  & d \\
+\end{pmatrix}
+$$
+
+Para cualquier $b,d \in \mathbb{R}$
+
+\vspace{0.5cm}
+
+\textit{e}) 
+
+$(AC-(BD)^{T})$ no invertible
+
+$(AC-D^{T}B^{T})$ no invertible
+
+$$ 
+\begin{pmatrix} 
+-3 & -1 \\
+0  & 7 \\
+\end{pmatrix}
+\cdot
+\begin{pmatrix} 
+1 & 0 \\
+3  & 1 \\
+\end{pmatrix}
+=
+\begin{pmatrix} 
+-6 & -1 \\
+21  & 7 \\
+\end{pmatrix}
+$$
+
+$$
+\begin{pmatrix} 
+3 & -7 \\
+-4  & 0 \\
+\end{pmatrix}
+\cdot
+\begin{pmatrix} 
+-5 & -3 \\
+-3  & m \\
+\end{pmatrix}
+=
+\begin{pmatrix} 
+6 & -9-7m \\
+20  & 12 \\
+\end{pmatrix}^{T}
+=
+\begin{pmatrix} 
+6 &  20 \\
+-9-7m  & 12 \\
+\end{pmatrix}
+$$
+
+$$
+AC-(BD)^{T} = 
+\begin{pmatrix} 
+-6 & -1 \\
+21  & 7 \\
+\end{pmatrix}
++
+\begin{pmatrix} 
+-6 & -20 \\
+7m+9  & -12 \\
+\end{pmatrix}
+$$
+
+$$
+z=
+\begin{pmatrix} 
+-12 & -21 \\
+7m+30  & -5 \\
+\end{pmatrix}
+$$
+
+Para que la matriz no sea invertible, su determinante es igual a 0. 
+
+\begin{center}
+    $det(z) = (12\cdot-5) - (-21\cdot(7m+30))$
+    
+    $0 = 60 + 630 + 147m$
+    
+    $-147m = 690$
+    
+    $m = \dfrac{690}{-147}$
+\end{center}
+
+Con esto, concluimos que $(AC-(BD)^{T})$ no es invertible siempre y cuando $m=\dfrac{690}{-147}$ dentro de la matriz $D$.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\item
+
+\textit{a}) 
+
+Sean $A, B$ matrices simétricas, entonces $A = A^{T}$ y $B = B^{T}$
+
+\begin{center}
+    $A + B = (A+B)$
+    
+    $A^{T} + B^{T} = (A+B)^{T}$
+\end{center}
+
+Por propiedades, $(A+B)^{T}$ es igual a $A^{T} + B^{T}$. Por ende, al tener que $A+B$ es igual a $A^{T} + B^{T}$, sabemos que es simétrica
+
+\vspace{0.5cm}
+
+\textit{b}) 
+Sea $A$ una matriz simétrica ($A = A^{T}$) y $B$ una matriz asimétrica ($B^{T}=-B$) tales que son conmutables. Su producto será una matriz asimétrica
+
+\begin{center}
+    $(AB)^{T}= B^{T}A^{T}$
+
+    $(AB)^{T}= -BA$
+\end{center}
+
+Por la información del enunciado sabemos que $-BA = -AB$, por lo tanto, $(AB)^{T}=-AB$, y podemos concluir que es una matriz asimétrica
+
+\vspace{0.5cm}
+
+\textit{c}) 
+
+La traza de una matriz traspuesta es igual a la traza de la matriz original: $Tr(A)= Tr(A^{T})$
+
+Dentro de los números reales el único número que al multiplicarlo por $-1$ da como resultado el mismo número, es $0$. Por ende, para que  $Tr(A)$ sea igual a la $Tr(A)^{T}$, siendo $A$ una matriz antisimétrica, es decir, la $Tr(A)^{T} = Tr(-A)$, esta debe ser igual a $0$. 
+
+\vspace{0.5cm}
+
+\textit{d}) 
+
+Tenemos que:
+
+$$
+\begin{pmatrix} 
+a_{ii} & \cdots & a_{ij} \\
+\vdots & \ddots & \vdots \\
+a_{ji}  & \cdots & a_{jj}\\
+\end{pmatrix}
+=
+\begin{pmatrix} 
+b_{ii} & \cdots & b_{ij} \\
+\vdots & \ddots & \vdots \\
+b_{ji}  & \cdots & b_{jj}\\
+\end{pmatrix}
++
+\begin{pmatrix} 
+c_{ii} & \cdots & c_{ij} \\
+\vdots & \ddots & \vdots \\
+c_{ji}  & \cdots & c_{jj}\\
+\end{pmatrix}
+$$
+
+donde $b_{ji} = b_{ij}$, y $c_{ji} = -c_{ij}$
+
+De esta manera sobre la diagonal $a_{ii} = b_{ii} + c_{ii}$; $a_{jj} = b_{jj} + c_{jj}$ 
+
+\begin{center}
+    $a_{ij} = b_{ij} + c_{ij}$
+    
+    $a_{ji} = b_{ji} + c_{ij}$, $a_{ji} = b_{ij} - c_{ij}$
+    
+    $a_{ij} - b_{ij} = c_{ij}$
+    
+    $a_{ji} = b_{ij} - a_{ij} + b_{ij}$, $a_{ji} = 2b_{ij} - a_{ij}$, $\dfrac{a_{ji} + a_{ij}}{2} = b_{ij}$
+    
+    $a_{ij} = \dfrac{a_{ji} + a_{ij}}{2} + c_{ij}$
+    
+    $a_{ij} - \dfrac{a_{ji} + a_{ij}}{2} = c_{ij} \rightarrow c_{ji} = \dfrac{a_{ij} - a_{ji}}{2} $
+    
+    $b_{ij} = b_{ji}$
+    
+    $b_{ji} = \dfrac{a_{ji} + a_{ij}}{2}$
+    
+    $c_{ji} = -c_{ij}$
+    
+    $\dfrac{a_{ij} - a_{ji}}{2} = -c_{ij}$
+    
+    $\dfrac{-a_{ij} - a_{ji}}{2} = c_{ij}$
+    
+\end{center}
+
+\item
+
+\textit{a}) 
+
+$$
+\left(\begin{array}{ccc|c}  
+ 3 & (\alpha^2-4) & 1 & 1 \\  
+ 0 & (3\alpha -2 -\alpha^2) & (1-\alpha) & (\alpha-2)  \\ 
+ 0 & 0 & (\alpha^2-1) & 1-\alpha  \\ 
+\end{array}\right)
+$$
+
+\begin{itemize}
+\item Única solución: $\alpha \neq 1$ 
+\end{itemize}
+
+\begin{itemize}
+\item Infinitas soluciones: $\alpha = 1$
+\end{itemize}
+
+\begin{itemize}
+\item No tiene solución: $\alpha = -1$ 
+\end{itemize}
+
+\textit{b}) 
+
+$$
+\left(\begin{array}{ccc|c}  
+ \alpha & 1 & \alpha & 1 \\  
+ 1 & 1 & \beta & \alpha  \\ 
+ \beta & 1 & 1 & 1   \\ 
+\end{array}\right) \underset{\overset{F_2\rightarrow (F_2-F_1)}{}}{\overset{F_1\rightarrow (\frac{F_1}{\alpha})}{}}
+$$
+
+$$
+\left(\begin{array}{ccc|c}  
+ 1 & \frac{1}{\alpha} & 1 & \frac{1}{\alpha} \\  
+ 0 & \frac{\alpha-1}{\alpha} & \beta -1 & \frac{\alpha^2-1}{\alpha}  \\ 
+ \beta & 1 & 1 & 1   \\ 
+\end{array}\right) \underset{\overset{F_3\rightarrow (F_3-\beta F_1)}{}}{\overset{F_2\rightarrow (F_2\cdot \frac{\alpha}{\alpha-1})}{}}
+$$
+
+$$
+\left(\begin{array}{ccc|c}  
+ 1 & \frac{1}{\alpha} & 1 & \frac{1}{\alpha} \\  
+ 0 & 1 & \frac{\alpha(\beta-1)}{\alpha-1} & \frac{\alpha^2-1}{\alpha-1}  \\ 
+ 0 & \frac{\alpha-\beta}{\alpha} & 1-\beta & \frac{\alpha-\beta}{\alpha}   \\ 
+\end{array}\right) \underset{\overset{F_3\rightarrow \frac{F_3}{1-\beta}}{}}{}{}
+$$
+
+$$
+\left(\begin{array}{ccc|c}  
+ 1 & \frac{1}{\alpha} & 1 & \frac{1}{\alpha} \\  
+ 0 & 1 & \frac{\alpha(\beta-1)}{\alpha-1} & \frac{\alpha^2-1}{\alpha-1}  \\ 
+ 0 & \frac{\alpha-\beta}{\alpha-\alpha \cdot \beta} & 1& \frac{\alpha-\beta}{\alpha-\alpha \cdot \beta}   \\ 
+\end{array}\right) \underset{\overset{F_3\rightarrow \frac{\alpha-\beta}{\alpha-\alpha\beta F_2 - F_3}}{}}{}{}
+$$
+
+$$
+\left(\begin{array}{ccc|c}  
+ 1 & \frac{1}{\alpha} & 1 & \frac{1}{\alpha} \\  
+ 0 & 1 & \frac{\alpha(\beta-1)}{\alpha-1} & \frac{\alpha^2-1}{\alpha-1}  \\ 
+ 0 & 0 & \frac{\beta-\alpha}{\alpha-1} & \frac{\alpha-\beta}{1-\beta}   \\ 
+\end{array}\right)
+$$
+
+De esta forma, encontramos las soluciones del sistema:
+
+\begin{itemize}
+\item Infinitas soluciones: $\beta = 2\alpha-1$, $\alpha=1$
+\end{itemize}
+
+\begin{itemize}
+\item Única solución: $\beta \neq 2\alpha-1$, $\alpha\neq1$
+\end{itemize}
+
+\begin{itemize}
+\item No hay solución: $\beta = 2\alpha-1$, $\alpha\neq1$
+\end{itemize}
+
+\item
+
+$$
+\begin{array}{cccc}
+     &\text{Sillas}&\text{mCa}&\text{mCo}  \\
+     \text{Lijar}&10&12&15\\
+     \text{Pintar}&6&8&12\\
+     \text{Barnizar}&12&12&18\\
+\end{array}
+\left|
+\begin{array}{cc}
+     \multicolumn{2}{c}{\text{hrs}\rightarrow\text{min}}\\
+     16&960\\
+     11&660\\
+    18&1080\\
+\end{array}
+\right.
+$$
+
+$$
+j=
+\left(\begin{array}{ccc|c}  
+ 10 & 12 & 15 & 960 \\  
+ 6 & 8 & 12 & 660  \\ 
+ 12 & 12 & 18 & 1080  \\ 
+\end{array}\right)
+$$
+
+\begin{itemize}
+\item $Det(j)$
+$$
+Det(j)= 
+\left(\begin{array}{ccc|cc}  
+ 10 & 12 & 15 & 10 & 12 \\  
+ 6 & 8 & 12 & 6 & 8 \\ 
+ 12 & 12 & 18 & 12 & 12 \\ 
+\end{array}\right)
+$$
+
+\begin{center}
+    $1440+1728+1080-1296-1440-1440$
+    
+    $Det(j)= 72$
+\end{center}
+
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{itemize}
+\item $Det(x)$
+$$
+Det(x)= 
+\left(\begin{array}{ccc|cc}  
+ 960 & 12 & 15 & 960 & 12 \\  
+ 660 & 8 & 12 & 660 & 8 \\ 
+ 1080 & 12 & 18 & 1080 & 12 \\ 
+\end{array}\right)
+$$
+
+\begin{center}
+    $138240 + 155520 + 118800 - 1425650 - 138240 - 129600$
+    
+    $Det(x)= 2160$
+\end{center}
+
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{itemize}
+\item $Det(y)$
+$$
+Det(y)= 
+\left(\begin{array}{ccc|cc}  
+ 10 & 960 & 15 & 10 & 960 \\  
+ 6 & 660 & 12 & 6 & 660 \\ 
+ 12 & 1080 & 18 & 12 & 1080 \\ 
+\end{array}\right)
+$$
+
+\begin{center}
+    $118800 + 138240 + 97200 - 103608 - 129600 - 148800$
+    
+    $Det(y)= 2160$
+\end{center}
+
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{itemize}
+\item $Det(z)$
+$$
+Det(z)= 
+\left(\begin{array}{ccc|cc}  
+ 10 & 12 & 960 & 10 & 12 \\  
+ 6 & 8 & 660 & 6 & 8 \\ 
+ 12 & 12 & 1080 & 12 & 12 \\ 
+\end{array}\right)
+$$
+
+\begin{center}
+    $86400 + 95040 + 69120 - 77760 - 79200 - 92160$
+    
+    $Det(z)= 1440$
+\end{center}
+
+\end{itemize}
+
+
+Ahora hallamos las incógnitas
+
+\begin{itemize}
+\item $x = \dfrac{Det(x)}{Det(j)} = \dfrac{2160}{72} = 30 $
+\end{itemize}
+
+\begin{itemize}
+\item $y = \dfrac{Det(y)}{Det(j)} = \dfrac{2160}{72} = 30 $
+\end{itemize}
+
+\begin{itemize}
+\item $z = \dfrac{Det(z)}{Det(j)} = \dfrac{1440}{72} = 20 $
+\end{itemize}
+
+De esta forma, concluimos que:
+
+\begin{itemize}
+\item Se deben fabricar 30 sillas
+\end{itemize}
+
+\begin{itemize}
+\item Se deben fabricar 30 mesas para café
+\end{itemize}
+
+\begin{itemize}
+\item Se deben fabricar 20 mesas de comedor
+\end{itemize}
+
+
+
+
+
+
+
+
+
