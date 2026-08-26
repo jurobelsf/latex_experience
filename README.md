@@ -21,11 +21,11 @@ Here are some previews of documents included in the archive:
 
 <img src="images/2.jpeg" width="600">
 
-<img src="images/3.jpeg" width="250">
+<img src="images/3.jpeg" width="600">
 
-<img src="images/4.jpeg" width="250">
+<img src="images/4.jpeg" width="600">
 
-<img src="images/5.jpeg" width="250">
+<img src="images/5.jpeg" width="600">
 
 The repository will grow over time as I add more documents from my historical LaTeX work.
 
