@@ -29,5 +29,3 @@ Here are some previews of documents included in the archive:
 
 The repository will grow over time as I add more documents from my historical LaTeX work.
 
-
-The repository will grow over time as I add more documents from my historical LaTeX work.
