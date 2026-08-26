@@ -17,9 +17,9 @@ Here are some previews of documents included in the archive:
 
 Here are some previews of documents included in the archive:
 
-<img src="images/1.jpeg" width="250">
+<img src="images/1.jpeg" width="600">
 
-<img src="images/2.jpeg" width="250">
+<img src="images/2.jpeg" width="600">
 
 <img src="images/3.jpeg" width="250">
 
