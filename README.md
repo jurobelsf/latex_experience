@@ -13,14 +13,21 @@ Each document is uploaded in both formats:
 
 Here are some previews of documents included in the archive:
 
-![Document preview 1](images/1.jpeg)
+## Document Previews
 
-![Document preview 2](images/2.jpeg)
+Here are some previews of documents included in the archive:
 
-![Document preview 3](images/3.jpeg)
+<img src="images/1.jpeg" width="250">
 
-![Document preview 4](images/4.jpeg)
+<img src="images/2.jpeg" width="250">
 
-![Document preview 5](images/5.jpeg)
+<img src="images/3.jpeg" width="250">
+
+<img src="images/4.jpeg" width="250">
+
+<img src="images/5.jpeg" width="250">
+
+The repository will grow over time as I add more documents from my historical LaTeX work.
+
 
 The repository will grow over time as I add more documents from my historical LaTeX work.
